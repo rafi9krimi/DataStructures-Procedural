@@ -1,0 +1,42 @@
+PROCEDURE dot_product(v1, v2: ARRAY_OF FLOAT, )
+VAR
+    i : INTEGER;
+BEGIN
+    ps :=0
+    FOR i FROM 0 TO v1.length-1 STEP step 1 DO
+        ps := ps + v1[i]*v2[i]
+    END_FOR
+    
+    write(ps)
+END
+
+FUNCTION dot_product_function(v1, v2: : ARRAY_OF FLOAT) : FLOAT
+VAR
+    ps : FLOAT;
+BEGIN
+    ps :=0;
+    RETURN ps ;
+END
+
+ALGORITHM ortho_vectors
+VAR
+    ps : FLOAT;
+    v1, v2 : ARRAY_OF FLOAT;
+    i, n : INTEGER;
+BEGIN
+    write("Give me v1 and v2 length");
+    read(n)
+
+    FOR i FROM 0 TO n-1 STEP step 1 DO
+        read(v2[i])
+    END_FOR
+
+    dot_product_procedure(v1, v2, ps);
+    ps := dot_product_function(v1, v2)
+    
+    IF (PS = 0) THEN
+        write("Orthogonal")
+    ELSE
+        write("Not Orthogonal")
+    END_IF
+END
